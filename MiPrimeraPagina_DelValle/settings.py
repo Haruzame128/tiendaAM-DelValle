@@ -55,7 +55,7 @@ ROOT_URLCONF = 'MiPrimeraPagina_DelValle.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],  # Directorio de plantillas
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

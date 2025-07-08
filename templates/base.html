@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Inicio - Artes Marciales{% endblock %}</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+    body {
+      display: flex;
+      flex-direction: column;
+    }
+    main {
+      flex: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="bg-dark text-white py-3">
+    <div class="container text-center">
+      <h1>Venta de Productos de Artes Marciales</h1>
+    </div>
+  </header>
+
+  <!-- Contenido principal -->
+  <main class="container my-5">
+    {% block content %}
+    <div class="row justify-content-center">
+      <!-- Tarjeta Productos -->
+      <div class="col-md-4 mb-3">
+        <div class="card text-center shadow">
+          <div class="card-body">
+            <h5 class="card-title">Productos</h5>
+            <p class="card-text">Administrar productos disponibles.</p>
+            <a href="{% url 'productos' %}" class="btn btn-primary">Registrar</a>
+            <a href="{% url 'productosListado' %}" class="btn btn-primary">Buscar</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tarjeta Usuarios -->
+      <div class="col-md-4 mb-3">
+        <div class="card text-center shadow">
+          <div class="card-body">
+            <h5 class="card-title">Usuarios</h5>
+            <p class="card-text">Registrar o ver usuarios.</p>
+            <a href="{% url 'usuarios' %}" class="btn btn-primary">Ir a Usuarios</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tarjeta Escuelas -->
+      <div class="col-md-4 mb-3">
+        <div class="card text-center shadow">
+          <div class="card-body">
+            <h5 class="card-title">Escuelas</h5>
+            <p class="card-text">Gestionar escuelas asociadas.</p>
+            <a href="{% url 'escuelas' %}" class="btn btn-primary">Ir a Escuelas</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endblock %}
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white text-center py-3">
+    <small>AdeS. Del Valle Eduardo Andres</small>
+  </footer>
+
+  
+</body>
+</html>

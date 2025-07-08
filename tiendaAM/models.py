@@ -1,7 +1,7 @@
 from django.db import models
 
 # Modelos para la aplicacion Tienda AM 
-class Usuarios(models.Model):
+class Usuario(models.Model):
     nombre = models.CharField(max_length=100)
     apellido = models.CharField(max_length=100)
     email = models.EmailField(unique=True)
@@ -11,7 +11,7 @@ class Usuarios(models.Model):
     def __str__(self):
         return f"{self.nombre} {self.apellido} ({self.email})"
 
-class Productos(models.Model):
+class Producto(models.Model):
     TIPO_CHOICES = [
         ('ropa', 'Ropa'),
         ('armas', 'Armas'),
@@ -27,7 +27,7 @@ class Productos(models.Model):
     def __str__(self):
         return self.nombre
     
-class Escuelas(models.Model):
+class Escuela(models.Model):
     nombre = models.CharField(max_length=100)
     descripcion = models.TextField()
     ubicacion = models.CharField(max_length=200)
